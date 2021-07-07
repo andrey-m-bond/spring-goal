@@ -1,0 +1,3 @@
+CREATE USER 'sadmin'@'%' IDENTIFIED BY '12345';
+
+GRANT ALL PRIVILEGES ON * . * TO 'sadmin'@'%';
