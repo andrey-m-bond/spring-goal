@@ -3,17 +3,16 @@ package carshop.db.services;
 
 import carshop.db.models.TaskTableModel;
 import carshop.db.repositories.TaskTableRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class TaskTableService {
 
-    @Autowired
-    private TaskTableRepository taskTableRepository;
+    private final TaskTableRepository taskTableRepository;
 
     public Iterable<TaskTableModel> getAllDescriptions() {
-        var s = taskTableRepository.findAll();
-        return s;
+        return taskTableRepository.findAll();
     }
 }
