@@ -21,11 +21,11 @@ public class RequestsController {
 
     @RequestMapping("/goods")
     public String descriptions() {
-        return goodsTableService.getList().toString();
+        return goodsTableService.getAll();
     }
 
     @RequestMapping("/clients")
     public String clients() {
-        return clientsTableService.getList().toString();
+        return clientsTableService.getAll();
     }
 }

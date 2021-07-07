@@ -2,17 +2,14 @@ package carshop.services;
 
 
 import carshop.db.models.GoodModel;
-import carshop.db.repositories.GoodsTableRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
-public class GoodsTableService {
+public class GoodsTableService extends BasicTableService<GoodModel> {
 
-    private final GoodsTableRepository goodsTableRepository;
-
-    public Iterable<GoodModel> getList() {
-        return goodsTableRepository.findAll();
+    public GoodsTableService(CrudRepository<GoodModel, Integer> crudRepository) {
+        super(crudRepository);
     }
 }
