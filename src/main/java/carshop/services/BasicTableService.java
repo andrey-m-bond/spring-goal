@@ -12,10 +12,14 @@ public class BasicTableService<T> {
         StringBuilder result = new StringBuilder();
         crudRepository.findAll().forEach(
                 item -> {
-                    result.append(item.toString());
                     result.append("\n");
+                    result.append(item.toString());
                 }
         );
         return result.toString();
+    }
+
+    public T addRecord(T t) {
+        return crudRepository.save(t);
     }
 }
