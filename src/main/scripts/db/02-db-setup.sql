@@ -1,4 +1,4 @@
-DROP SCHEMA IF EXISTS `ecommerce`;
+DROP SCHEMA IF EXISTS `car_shop`;
 
-CREATE SCHEMA `ecommerce`;
-USE `ecommerce` ;
+CREATE SCHEMA `car_shop`;
+USE `car_shop` ;

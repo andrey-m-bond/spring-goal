@@ -1,7 +1,6 @@
 package carshop.db.models;
 
-
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,11 +11,15 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "tasks")
-public class TaskTableModel {
+@Table(name = "goods")
+public class GoodModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String description;
-    private Boolean completed = false;
+    private String name;
+
+    @Column(name = "supplier_id")
+    private String supplierId;
+    private Integer price;
+    private Integer amount;
 }

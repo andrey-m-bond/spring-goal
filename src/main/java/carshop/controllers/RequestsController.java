@@ -1,8 +1,8 @@
 package carshop.controllers;
 
 
-import carshop.services.ClientTableService;
-import carshop.services.TaskTableService;
+import carshop.services.ClientsTableService;
+import carshop.services.GoodsTableService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class RequestsController {
 
-    private final TaskTableService taskTableService;
-    private final ClientTableService clientTableService;
+    private final GoodsTableService goodsTableService;
+    private final ClientsTableService clientsTableService;
 
     @RequestMapping("/")
     public String index() {
@@ -21,11 +21,11 @@ public class RequestsController {
 
     @RequestMapping("/goods")
     public String descriptions() {
-        return taskTableService.getAllDescriptions().toString();
+        return goodsTableService.getList().toString();
     }
 
     @RequestMapping("/clients")
     public String clients() {
-        return clientTableService.getList().toString();
+        return clientsTableService.getList().toString();
     }
 }
