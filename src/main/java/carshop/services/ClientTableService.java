@@ -1,4 +1,4 @@
-package carshop.db.services;
+package carshop.services;
 
 import carshop.db.models.ClientModel;
 import carshop.db.repositories.ClientsTableRepository;

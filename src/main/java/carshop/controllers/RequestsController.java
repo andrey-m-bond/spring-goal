@@ -1,15 +1,15 @@
 package carshop.controllers;
 
 
-import carshop.db.services.ClientTableService;
-import carshop.db.services.TaskTableService;
+import carshop.services.ClientTableService;
+import carshop.services.TaskTableService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-public class StartPageController {
+public class RequestsController {
 
     private final TaskTableService taskTableService;
     private final ClientTableService clientTableService;
@@ -19,7 +19,7 @@ public class StartPageController {
         return "Welcome to the best Car Shop ever!";
     }
 
-    @RequestMapping("/descriptions")
+    @RequestMapping("/goods")
     public String descriptions() {
         return taskTableService.getAllDescriptions().toString();
     }
